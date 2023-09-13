@@ -26,8 +26,8 @@ client.on("ready", async () => {
   console.log("awooga");
   d("rpc client ready");
 
-  await auth.login(
-    parseInt(process.env.CLIENT_ID!, 10),
+  await auth.login_lazer(
+    process.env.CLIENT_ID!,
     process.env.CLIENT_SECRET!
   );
 

@@ -1,9 +1,9 @@
 import { v2 } from "osu-api-extended";
-import { user_data } from "osu-api-extended/dist/types/v2";
+import { response } from "osu-api-extended/dist/types/v2_user_me_details";
 import { StringGameMode } from "./gamemode";
 
 class UserManager {
-  private user: { [key in StringGameMode]: user_data | undefined | null } = {
+  private user: { [key in StringGameMode]: response | undefined | null } = {
     osu: undefined,
     taiko: undefined,
     mania: undefined,
@@ -11,21 +11,21 @@ class UserManager {
   };
 
   public async getUser(
-    username: string,
+    _username: string,
     gameMode: StringGameMode
-  ): Promise<user_data | null> {
-    if (this.user[gameMode]) return this.user[gameMode] as user_data;
+  ): Promise<response | null> {
+    if (this.user[gameMode]) return this.user[gameMode] as response;
     if (this.user[gameMode] === null) return null;
 
     this.user[gameMode] = null;
     try {
-      const user = await v2.user.get(username, gameMode, "username");
+      const user = await v2.user.me.details(gameMode);
       this.user[gameMode] = user;
     } catch (e) {
       this.user[gameMode] = null;
     }
 
-    return this.user[gameMode] as user_data | null;
+    return this.user[gameMode] as response | null;
   }
 
   public isRequested(gameMode: StringGameMode) {

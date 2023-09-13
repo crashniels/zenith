@@ -1,4 +1,4 @@
-import { user_data } from "osu-api-extended/dist/types/v2";
+import { response } from "osu-api-extended/dist/types/v2_user_me_details";
 import { Data } from "../../types";
 import { StringGameMode } from "../gamemode";
 import { userManager } from "../user";
@@ -12,7 +12,7 @@ export async function setResultsPresence(
   data: Data,
   gameMode: StringGameMode
 ) {
-  let user: user_data | null = null;
+  let user: response | null = null;
   if (userManager.isRequested(gameMode)) {
     user = await userManager.getUser(data.gameplay.name, gameMode);
   }

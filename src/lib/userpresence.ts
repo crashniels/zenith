@@ -1,14 +1,14 @@
 import { Presence } from "discord-rpc";
-import { user_data } from "osu-api-extended/dist/types/v2";
+import { response } from "osu-api-extended/dist/types/v2_user_me_details";
 import { resolveFullGameMode, StringGameMode } from "./gamemode";
 
 export function getUserPresence(
-  user: user_data,
+  user: response,
   gameMode: StringGameMode
 ): Presence {
   const presence: Presence = {};
 
-  const rank = user.rankHistory.data[user.rankHistory.data.length - 1];
+  const rank = user.rank_history.data[user.rank_history.data.length - 1];
   // @ts-ignore
   presence.smallImageKey = `https://a.ppy.sh/${user.id}?1640769389.jpeg`;
   presence.smallImageText = `${
