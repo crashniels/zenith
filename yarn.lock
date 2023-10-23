@@ -2,10 +2,17 @@
 # yarn lockfile v1
 
 
-"@types/discord-rpc@^4.0.5":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-4.0.5.tgz#5e5562d394df04d0d1c234f7c664a9ee3c94344f"
-  integrity sha512-4Nd8eo/razej1fglurBJGtkv/gAEeSdGySSmWv/dn0Xh0xvNcmtdnXmzMx1IVv52jXHloSegNGFDLjLsax0JFw==
+"@types/discord-rpc@^4.0.7":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@types/discord-rpc/-/discord-rpc-4.0.7.tgz#f68125091d0ae023320b6ca494859fd7233ce809"
+  integrity sha512-bLn7/fHDFEZ2J2HopIYe0fu7pPCqNtmve/xEE7lKxYbJhFjWzsRIW/iOjI6gMKWNT7EQ+Jm1+J3cNC2i7CcsrA==
+  dependencies:
+    "@types/events" "*"
+
+"@types/events@*":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.2.tgz#c9b18152fdac34e924260532762255e34ef1d491"
+  integrity sha512-v4Mr60wJuF069iZZCdY5DKhfj0l6eXNJtbSM/oMDNdRLoBEUsktmKnswkz0X3OAic5W8Qy/YU6owKE4A66Y46A==
 
 "@types/node@*", "@types/node@^20.6.0":
   version "20.6.0"
